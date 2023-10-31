@@ -21,6 +21,8 @@ VMs require a hypervisor on top of the hardware and the host operating system in
 
 Containers require a Container Engine which is native to most Unix/Linux systems.
 
+**Docker Desktop** is in fact a virtual machine that contains a GuestOS with a Container Engine.
+
 ## Open Container Initiative
 
 https://opencontainers.org/

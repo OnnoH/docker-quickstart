@@ -14,6 +14,12 @@ Alternatively you can use Podman (https://podman.io/docs/installation). In theor
 
 The excercises in this repository target Docker.
 
+### Docker Desktop
+
+**Docker Desktop** is a virtual machine that contains a GuestOS with a Container Engine.
+
+Checkout the **Settings** and in particular the **Resources** section on your machine.
+
 ### Litmus test
 
 Open up a terminal or a command prompt and type
