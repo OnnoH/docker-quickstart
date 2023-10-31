@@ -129,3 +129,14 @@ docker rm sandman
 Type fast, you only have 10 seconds...
 
 In fact `docker stop` will gracefully shutdown the container and it might even complete the sleep. If you're impatient or the stop fails, there's always `docker kill`.
+
+## Auto clean-up
+
+To remove containers every time after they ran sounds a bit tedious and should be automated. Of course there's an option that takes care of that. Try:
+
+```shell
+docker run --rm busybox ls -la
+docker ps -a
+```
+
+If there's no more rubbish we can start looking into containers that are not that ephemeral.

@@ -54,6 +54,8 @@ docker pull quay.io/quay/busybox
 docker image ls
 ```
 
+_NB: docker.io/ is the prefix for Docker Hub. As it is the installations default, it won't show up in the screen output._
+
 And the latest with the specific tag
 
 ```shell
@@ -93,4 +95,4 @@ As mentioned before, when you start a container, the local registry is used and 
 docker run --rm -it wernight/funbox nyancat
 ```
 
-Press Control-C to stop the container.
+Press Control-C to stop the container and jump to the next exercise where we start running some more containers.

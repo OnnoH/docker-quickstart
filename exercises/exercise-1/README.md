@@ -36,10 +36,12 @@ Pay attention to the **OS/Arch** properties in the output. Although you can prob
 
 Issuing the Docker commands is done via a CLI that comes with the Docker Desktop and is available if you passed the litmus test.
 
-Just run the `docker` command without any parameters and your screen will be flooded.
+Just run the `docker --help` command and your screen will be flooded. Use `docker --help | more` to have a somewhat tranquil experience.
 
 The most common commands are listed on top. To get more information on a specific command, just type `docker <command>` followed by `--help`. E.g.
 
 ```shell
 docker pull --help
 ```
+
+You're all set!

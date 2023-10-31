@@ -36,3 +36,21 @@ Basically the idea behind this is 'build once, run everywhere' (like Java).
 Entering the container ecosystem will surround you with a lot of new buzzwords. RedHat has a nice page where they are explained:
 
 https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction
+
+## Excercises
+
+1. [Getting started](exercises/exercise-1/README.md)
+2. [Container images](exercises/exercise-2/README.md)
+3. [Running containers](exercises/exercise-3/)
+4. [Exposing containers](exercises/exercise-4/README.md)
+5. [Inside containers](exercises/exercise-5/README.md)
+6. [Building images](exercises/exercise-6/)
+7.
+
+## Advanced topics
+
+- [Docker Networking](https://docs.docker.com/network/)
+- [Docker Volumes](https://docs.docker.com/storage/volumes/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [Docker Swarm](https://docs.docker.com/engine/swarm/)
+- [Kubernetes](https://kubernetes.io/)
