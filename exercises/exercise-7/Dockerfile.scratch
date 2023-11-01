@@ -1,0 +1,8 @@
+FROM scratch
+
+ARG ARCH=arm64
+
+COPY jq-linux-${ARCH} /jq
+COPY some.json /
+
+ENTRYPOINT ["/jq"]

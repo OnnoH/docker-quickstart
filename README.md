@@ -44,13 +44,15 @@ https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-in
 3. [Running containers](exercises/exercise-3/)
 4. [Exposing containers](exercises/exercise-4/README.md)
 5. [Inside containers](exercises/exercise-5/README.md)
-6. [Building images](exercises/exercise-6/)
-7.
+6. [Building images](exercises/exercise-6/README.md)
+7. [Building images from scratch](exercises/exercise-7/README.md)
 
 ## Advanced topics
 
-- [Docker Networking](https://docs.docker.com/network/)
-- [Docker Volumes](https://docs.docker.com/storage/volumes/)
-- [Docker Compose](https://docs.docker.com/compose/)
-- [Docker Swarm](https://docs.docker.com/engine/swarm/)
-- [Kubernetes](https://kubernetes.io/)
+- [Networking](https://docs.docker.com/network/) (ingress/egress)
+- [Volumes](https://docs.docker.com/storage/volumes/) (persistant storage)
+- [Scout](https://docs.docker.com/scout/) (scan for vulnerabilities)
+- [Compose](https://docs.docker.com/compose/) (run multiple containers in one go)
+- [Cross Platform Builds](https://docs.docker.com/build/building/multi-platform/) (arm64, aarch64, amd64)
+- [Swarm](https://docs.docker.com/engine/swarm/) (manage a hive)
+- [Kubernetes](https://kubernetes.io/) (container orchestration)

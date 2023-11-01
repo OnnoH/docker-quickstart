@@ -1,0 +1,7 @@
+FROM scratch
+
+ARG ARCH="aaarch64"
+
+ADD alpine-minirootfs-3.18.4-${ARCH}.tar.gz /
+
+CMD ["sh"]
