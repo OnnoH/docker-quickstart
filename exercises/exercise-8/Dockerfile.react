@@ -1,0 +1,17 @@
+# Stage 1
+FROM node:18-alpine as builder
+
+WORKDIR /react-docker-example/
+
+RUN npx create-react-app my-app && \
+    cd my-app && \
+    npm install && \
+    npm run build
+
+# Stage 2
+FROM nginx
+
+WORKDIR /usr/share/nginx/html
+RUN rm -rf ./*
+COPY --from=builder /react-docker-example/my-app/build .
+ENTRYPOINT [ "nginx", "-g", "daemon off;" ]

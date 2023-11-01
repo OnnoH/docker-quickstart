@@ -46,6 +46,8 @@ https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-in
 5. [Inside containers](exercises/exercise-5/README.md)
 6. [Building images](exercises/exercise-6/README.md)
 7. [Building images from scratch](exercises/exercise-7/README.md)
+8. [Building images with intermediate steps](exercises/exercise-8/README.md)
+9. [Registering images](exercises/exercise-9/README.md)
 
 ## Advanced topics
 
