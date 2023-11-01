@@ -2,7 +2,7 @@
 
 ## From scratch
 
-Starting with a clean slate and a host OS as a base, images can be rather small.
+Starting with a clean slate, you can create rather small images.
 
 To build the image, change to the 'exercises/exercise-7' of the root of this repository.
 
@@ -25,7 +25,7 @@ docker run --rm basic .bar some.json
 
 ## Alpine
 
-Sometimes the need for another underlying operating system is needed, because your containerised application requires the use of a different library set.
+Sometimes there's a need for an underlying operating system, e.g. because your containerised application requires the use of a different C-library set or requires a process daemon to run multiple tasks simultaneously.
 
 [Alpine Linux](https://alpinelinux.org/) is a popular variant because it is rather small compared to e.g. Ubuntu.
 
