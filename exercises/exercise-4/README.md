@@ -26,10 +26,16 @@ Docker captures the output of a container in a logfile, which is readable throug
 docker logs ididitmyweb
 ```
 
+or show the last 10 lines
+
+```shell
+docker logs --tail 10 ididitmyweb
+```
+
 or if you want to follow the log stream
 
 ```shell
-docker logs --tail ididitmyweb
+docker logs --follow ididitmyweb
 ```
 
 Press Control-C to quit the stream.
