@@ -56,5 +56,6 @@ https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-in
 - [Scout](https://docs.docker.com/scout/) (scan for vulnerabilities)
 - [Compose](https://docs.docker.com/compose/) (run multiple containers in one go)
 - [Cross Platform Builds](https://docs.docker.com/build/building/multi-platform/) (arm64, aarch64, amd64)
+  - https://www.ivonet.nl/2022/04/10/docker-multi-platform-build-with-buildx/
 - [Swarm](https://docs.docker.com/engine/swarm/) (manage a hive)
 - [Kubernetes](https://kubernetes.io/) (container orchestration)
