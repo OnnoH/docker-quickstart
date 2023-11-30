@@ -10,6 +10,6 @@ RUN git clone https://github.com/spring-projects/spring-petclinic.git && \
 # Stage 2
 FROM openjdk:17
 
-COPY --from=builder /pet-clinic/spring-petclinic/target/spring-petclinic-3.1.0-SNAPSHOT.jar /petclinic.jar
+COPY --from=builder /pet-clinic/spring-petclinic/target/spring-petclinic-3.2.0-SNAPSHOT.jar /petclinic.jar
 
 CMD ["java", "-jar", "petclinic.jar"]
