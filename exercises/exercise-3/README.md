@@ -6,7 +6,7 @@ The previous exercise gave a sneak preview on running a container. Let's try thi
 
 > BusyBox: The Swiss Army Knife of Embedded Linux
 
-https://busybox.net/about.html
+<https://busybox.net/about.html>
 
 To see the capabilities of `busybox`:
 
@@ -22,7 +22,7 @@ docker run busybox busybox ls -la
 
 It should look different from the root folder on your machine.
 
-You can omit the busybox command, because the container has all the symbolic links inside (https://busybox.net/downloads/BusyBox.html).
+You can omit the busybox command, because the container has all the symbolic links inside (<https://busybox.net/downloads/BusyBox.html>).
 
 ```shell
 docker run busybox ls -la
@@ -38,7 +38,7 @@ docker run busybox cat /etc/passwd
 
 Running containers can be shown using
 
-```
+```shell
 docker container ps
 ```
 

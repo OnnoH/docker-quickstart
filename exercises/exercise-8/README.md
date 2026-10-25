@@ -47,8 +47,7 @@ docker builder prune
 All's gone!
 
 ## Sidenote
+
 If you want to bypass the cache and start a clean build, just add `--no-cache` to the command.
 
 Also the build log is compact, so you might miss out on some output. Add `--progress=plain` to see the log in full.
-
-

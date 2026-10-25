@@ -29,7 +29,7 @@ Sometimes there's a need for an underlying operating system, e.g. because your c
 
 [Alpine Linux](https://alpinelinux.org/) is a popular variant because it is rather small compared to e.g. Ubuntu.
 
-Goto https://alpinelinux.org/downloads/ and fetch the miniroot filesystem archive for your favourite architecture and place it in a `alpine` called folder under this exercise.
+Goto <https://alpinelinux.org/downloads/> and fetch the miniroot filesystem archive for your favourite architecture and place it in a `alpine` called folder under this exercise.
 
 ```shell
 docker image build --tag alpine:3.18.4 \
@@ -38,7 +38,7 @@ docker image build --tag alpine:3.18.4 \
                    alpine
 ```
 
-> The folder `alpine` is used as a 'build context' which means that everything in there is copied to the builder, like configuration files, startup scripts etc. If no additional files are needed then providing an empty folder speeds up the process. See: https://docs.docker.com/build/building/context/
+> The folder `alpine` is used as a 'build context' which means that everything in there is copied to the builder, like configuration files, startup scripts etc. If no additional files are needed then providing an empty folder speeds up the process. See: <https://docs.docker.com/build/building/context/>
 
 Then run it:
 
@@ -55,7 +55,7 @@ docker run --rm alpine:3.18.4 uname -a
 ## CMD vs ENTRYPOINT
 
 > ENTRYPOINT is the process that’s executed inside the container.
-
+>
 > CMD is the default set of arguments that are supplied to the ENTRYPOINT process.
 
-See: https://spacelift.io/blog/docker-entrypoint-vs-cmd
+See: <https://spacelift.io/blog/docker-entrypoint-vs-cmd>

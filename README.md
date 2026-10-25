@@ -25,7 +25,7 @@ Containers require a Container Engine which is native to most Unix/Linux systems
 
 ## Open Container Initiative
 
-https://opencontainers.org/
+<https://opencontainers.org/>
 
 > The OCI currently contains three specifications: the Runtime Specification (runtime-spec), the Image Specification (image-spec) and the Distribution Specification (distribution-spec). The Runtime Specification outlines how to run a “filesystem bundle” that is unpacked on disk. At a high-level an OCI implementation would download an OCI Image then unpack that image into an OCI Runtime filesystem bundle. At this point the OCI Runtime Bundle would be run by an OCI Runtime.
 
@@ -35,7 +35,7 @@ Basically the idea behind this is 'build once, run everywhere' (like Java).
 
 Entering the container ecosystem will surround you with a lot of new buzzwords. RedHat has a nice page where they are explained:
 
-https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction
+<https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction>
 
 ## Excercises
 
@@ -56,6 +56,6 @@ https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-in
 - [Scout](https://docs.docker.com/scout/) (scan for vulnerabilities)
 - [Compose](https://docs.docker.com/compose/) (run multiple containers in one go)
 - [Cross Platform Builds](https://docs.docker.com/build/building/multi-platform/) (arm64, aarch64, amd64)
-  - https://www.ivonet.nl/2022/04/10/docker-multi-platform-build-with-buildx/
+  - <https://www.ivonet.nl/2022/04/10/docker-multi-platform-build-with-buildx/>
 - [Swarm](https://docs.docker.com/engine/swarm/) (manage a hive)
 - [Kubernetes](https://kubernetes.io/) (container orchestration)

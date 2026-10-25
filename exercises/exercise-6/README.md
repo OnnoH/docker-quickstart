@@ -9,7 +9,7 @@ Of course it's nice to not have to reinvent the wheel and borrow a cup of images
 - Custom applications
 - ...
 
-Some good practices: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+Some good practices: <https://docs.docker.com/develop/develop-images/dockerfile_best-practices/>
 
 Checkout the build command:
 
@@ -60,8 +60,8 @@ Note that the last command only removed the tag. Removing the last tag will in e
 
 We used the prepared nginx image as a base.
 
-https://hub.docker.com/_/nginx
+<https://hub.docker.com/_/nginx>
 
-And the Dockerfile(s) used to create this are here: https://github.com/nginxinc/docker-nginx
+And the Dockerfile(s) used to create this are here: <https://github.com/nginxinc/docker-nginx>
 
 As you can see, image building is hard work and we're going to explore that in more detail in the next exercise.

@@ -5,12 +5,12 @@
 ### Prerequisites
 
 - Docker Desktop installed
-  https://docs.docker.com/get-docker/
+  <https://docs.docker.com/get-docker/>
 - Access to a terminal/command prompt
 
-Docker is free for personal use, but if you want to keep things private or use it in a commercial fashion then a license is needed (https://www.docker.com/pricing/).
+Docker is free for personal use, but if you want to keep things private or use it in a commercial fashion then a license is needed (<https://www.docker.com/pricing/>).
 
-Alternatively you can use Podman (https://podman.io/docs/installation). In theory you can replace `docker` with `podman`, but in practice ymmv.
+Alternatively you can use Podman (<https://podman.io/docs/installation>). In theory you can replace `docker` with `podman`, but in practice ymmv.
 
 The excercises in this repository target Docker.
 
