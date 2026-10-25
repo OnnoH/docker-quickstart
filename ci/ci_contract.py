@@ -14,10 +14,14 @@ Each check carries the number of the criterion it covers:
   AC-3  gitleaks runs on every push and pull request and a finding fails the
         check.
   AC-4  There is no tests job: this repository has no executable code to test.
+
+The ci-contract job runs this script and nothing else, so the checks for
+renovate.json (ONN-23) run from here too; see ci/renovate_contract.py.
 """
 
 import pathlib
 import re
+import subprocess
 import sys
 
 import yaml
@@ -95,6 +99,11 @@ if failures:
     print(f"\n{len(failures)} check(s) failed:")
     for failure in failures:
         print(f"  - {failure}")
-    sys.exit(1)
+else:
+    print(f"\nAll {len(jobs)} jobs match the acceptance criteria.")
 
-print(f"\nAll {len(jobs)} jobs match the acceptance criteria.")
+print()
+sys.stdout.flush()  # the child writes to the same stream
+renovate = subprocess.run([sys.executable, str(ROOT / "ci" / "renovate_contract.py")])
+
+sys.exit(1 if failures or renovate.returncode else 0)
