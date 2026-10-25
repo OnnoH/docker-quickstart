@@ -1,0 +1,108 @@
+name: ci
+
+# Checks for a tutorial repository: the text is linted, the example images are
+# built, and the tree is scanned for secrets.
+#
+# AC-4: there is deliberately no tests job. This repository holds Markdown,
+# two HTML pages and example Dockerfiles; it has no executable code to test.
+# The ci-contract job below enforces that, so a tests job cannot appear without
+# the acceptance criteria being revisited.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: lint (AC-1)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: AC-1 markdownlint
+        run: npx --yes markdownlint-cli2@0.18.1
+
+      - name: AC-1 htmlhint
+        run: npx --yes htmlhint@1.1.4 "exercises/**/*.html"
+
+  build:
+    name: build exercise images (AC-2)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: AC-2 build exercise 6 nginx image
+        run: >-
+          docker build
+          --tag ididitmyweb:ci
+          --file exercises/exercise-6/Dockerfile.nginx
+          exercises/exercise-6/nginx
+
+      - name: AC-2 build exercise 7 scratch image
+        run: >-
+          docker build
+          --tag basic:ci
+          --file exercises/exercise-7/Dockerfile.scratch
+          --build-arg ARCH=amd64
+          exercises/exercise-7/scratch
+
+      # Exercise 7 asks the reader to download this archive themselves, so it is
+      # not in git. The runner fetches the same file into an empty build context.
+      - name: Fetch the Alpine mini root filesystem
+        run: |
+          mkdir -p "$RUNNER_TEMP/alpine"
+          curl -fsSL \
+            -o "$RUNNER_TEMP/alpine/alpine-minirootfs-3.18.4-x86_64.tar.gz" \
+            https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-minirootfs-3.18.4-x86_64.tar.gz
+
+      - name: AC-2 build exercise 7 alpine image
+        run: >-
+          docker build
+          --tag alpine-exercise:3.18.4
+          --file exercises/exercise-7/Dockerfile.alpine
+          --build-arg ARCH=x86_64
+          "$RUNNER_TEMP/alpine"
+
+  secret-scan:
+    name: secret scan (AC-3)
+    runs-on: ubuntu-latest
+    env:
+      GITLEAKS_VERSION: 8.21.2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install gitleaks
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/gitleaks.tar.gz" \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          tar -xzf "$RUNNER_TEMP/gitleaks.tar.gz" -C "$RUNNER_TEMP" gitleaks
+
+      - name: AC-3 gitleaks scan
+        run: '"$RUNNER_TEMP/gitleaks" dir . --redact --no-banner --exit-code 1'
+
+  ci-contract:
+    name: ci contract (AC-1..AC-4)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install PyYAML
+        run: pip install --quiet pyyaml
+
+      - name: AC-1..AC-4 this workflow matches the acceptance criteria
+        run: python3 ci/ci_contract.py

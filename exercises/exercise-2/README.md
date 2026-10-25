@@ -4,7 +4,7 @@
 
 Containers are instances of images. You can compare it to a running Spring Boot application which base is the compiled JAR file.
 
-Images can be created out of a definition and they reside in a registry. The most popular registry is the Docker Hub (https://hub.docker.com/). But you can also run a private registry or use the Nexus Repository Manager for instance.
+Images can be created out of a definition and they reside in a registry. The most popular registry is the Docker Hub (<https://hub.docker.com/>). But you can also run a private registry or use the Nexus Repository Manager for instance.
 
 Images are cached on your local machine and instantiated from there. If an images can't be located locally, it is pulled from a registry.
 

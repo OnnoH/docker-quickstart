@@ -63,7 +63,7 @@ docker ps
 curl localhost
 ```
 
-Instead of `curl` you can of course also open up a browser to http://localhost.
+Instead of `curl` you can of course also open up a browser to <http://localhost>.
 
 The binding is set to `0.0.0.0:80` which means that every IP address can access this container on port 80. Of course more granular control can be configured, but Docker Networking is not for the faint of heart and definitely no stuff for beginners.
 

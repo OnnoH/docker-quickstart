@@ -1,0 +1,15 @@
+{
+  // Markdown rules for the tutorial text (AC-1). Defaults apply except:
+  "config": {
+    // The tutorial is written in one-sentence-per-line prose; hard wrapping it
+    // would churn every page for no reader benefit.
+    "MD013": false,
+    // README.md uses <sup> for footnotes and the exercises embed HTML on purpose.
+    "MD033": false,
+    // The tutorial's headings ask and exclaim ("Why Docker?", "What a mess!");
+    // only the punctuation that really reads as a typo is rejected.
+    "MD026": { "punctuation": ".,;:。，；：" }
+  },
+  "globs": ["**/*.md"],
+  "ignores": ["node_modules/**"]
+}
